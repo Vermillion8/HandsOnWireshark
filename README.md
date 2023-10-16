@@ -146,4 +146,47 @@ The receiver typically acknowledge 1448 bytes of data.
 
 ## UDP
 
-###
+### 1. Select the first UDP segment in your trace. What is the packet number4 of this segment in the trace file? What type of application-layer payload or protocol message is being carried in this UDP segment? Look at the details of this packet in Wireshark. How many fields there are in the UDP header? What are the names of these fields?
+
+![alt text](./images/udp_1.png)
+
+```
+Source Port
+Destination Port
+Length
+Checksum
+```
+
+### 2. By consulting the displayed information in Wireshark's packet content field for this packet (or by consulting the textbook), what is the length (in bytes) of each of the UDP header fields?
+
+![alt text](./images/udp_2.png)
+
+Each header is 2 bytes long. The total length of the header is 8 bytes.
+
+### 3. The value in the Length field is the length of what? (You can consult the text for this answer). Verify your claim with your captured UDP packet.
+
+![alt text](./images/udp_3.png)
+
+The length field is the length of the UDP header and the data. The length of the UDP header is 8 bytes. The length of the data is 275 bytes. The total length is 283 bytes.
+
+### 4. What is the maximum number of bytes that can be included in a UDP payload?
+
+The maximum number of bytes that can be included in a UDP payload is 65535 bytes.
+
+### 5. What is the largest possible source port number?
+
+The largest possible source port number is 65535.
+
+### 6. What is the protocol number for UDP? Give your answer in decimal notation. To answer this question, you'll need to look into the Protocol field of the IP datagram containing this UDP segment.
+
+![alt text](./images/udp_6.png)
+
+The protocol number for UDP is 17.
+
+### 7. Examine the pair of UDP packets in which your host sends the first UDP packet and the second UDP packet is a reply to this first UDP packet. (Hint: for a second packet to be sent in response to a first packet, the sender of the first packet should be the destination of the second packet). What is the packet number of the first of these two UDP segments in the trace file? What is the packet number of the second of these two UDP segments in the trace file? Describe the relationship between the port numbers in the two packets.
+
+![alt text](./images/udp_7_1.png)
+
+![alt text](./images/udp_7_2.png)
+
+The packet number of the first UDP segment is 15. The packet number of the second UDP segment is 17. The port number of the first UDP segment is 58350. The port number of the second UDP segment is 53. The port number of the first UDP segment is the source port number. The port number of the second UDP segment is the destination port number.
